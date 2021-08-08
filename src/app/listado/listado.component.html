@@ -1,0 +1,19 @@
+<div>
+    <button [disabled]="!prevbtn" (click)="prevBloque()">Anterior</button>
+    <button [disabled]="!nextbtn" (click)="sigBloque()">Siguiente</button>
+
+    <table>
+        <tr>
+            <th>Num</th>
+            <th>Nombre</th>
+            <th></th>
+        </tr>
+        <ng-container *ngFor="let item of pokemon; let i = index">
+            <tr>
+                <td>{{i+1+offset}}</td>
+                <td>{{item.name}}</td>
+                <td><button (click)="detalles(item.name)">Detalles</button></td>
+            </tr>
+        </ng-container>
+    </table>
+</div>

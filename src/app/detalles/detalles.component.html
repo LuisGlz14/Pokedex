@@ -1,0 +1,44 @@
+<div>
+    <img src="{{sprite}}">
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <td>{{nombre}}</td>
+        </tr>
+        <tr>
+            <th>Tipo</th>
+            <td>
+                <ul *ngFor="let item of tipos">
+                    <li>{{item.type.name}}</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Habilidades</th>
+            <td>
+                <ul *ngFor="let item of habilidades">
+                    <li>{{item.ability.name}}</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table>
+        <tr>
+            <th colspan="2">Estadisticas</th>
+        </tr>
+        <ng-container *ngFor="let item of estadisticas">
+            <tr>
+                <td>{{item.stat.name}}</td>
+                <td>{{item.base_stat}}</td>
+            </tr>
+        </ng-container>
+    </table>
+    
+    <h3>Presente en estos juegos</h3>
+    <ul *ngFor="let item of juegos">
+        <li>Pokemon {{item.version.name}}</li>
+    </ul>
+</div>

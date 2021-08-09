@@ -1,44 +1,54 @@
-<div>
-    <img src="{{sprite}}">
-    <table>
-        <tr>
-            <th>Nombre</th>
-            <td>{{nombre}}</td>
-        </tr>
-        <tr>
-            <th>Tipo</th>
-            <td>
-                <ul *ngFor="let item of tipos">
-                    <li>{{item.type.name}}</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <th>Habilidades</th>
-            <td>
-                <ul *ngFor="let item of habilidades">
-                    <li>{{item.ability.name}}</li>
-                </ul>
-            </td>
-        </tr>
-    </table>
+<div class="container my-5">
 
-    <br>
-
-    <table>
-        <tr>
-            <th colspan="2">Estadisticas</th>
-        </tr>
-        <ng-container *ngFor="let item of estadisticas">
-            <tr>
-                <td>{{item.stat.name}}</td>
-                <td>{{item.base_stat}}</td>
-            </tr>
-        </ng-container>
-    </table>
+    <button class="btn btn-secondary" (click)="navInicio()">Regresar</button>
+    <div class="row w-50 mx-auto">
+        <img class="border border-5 border-secondary" src="{{sprite}}">
+        <table class="table table-secondary mt-2">
+            <tbody>
+                <tr>
+                    <th>Nombre</th>
+                    <td>{{nombre}}</td>
+                </tr>
+                <tr>
+                    <th>Tipo</th>
+                    <td>
+                        <ul *ngFor="let item of tipos">
+                            <li>{{item.type.name}}</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Habilidades</th>
+                    <td>
+                        <ul *ngFor="let item of habilidades">
+                            <li>{{item.ability.name}}</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     
-    <h3>Presente en estos juegos</h3>
-    <ul *ngFor="let item of juegos">
-        <li>Pokemon {{item.version.name}}</li>
-    </ul>
+    <div class="row w-50 mx-auto">
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th colspan="2">Estadisticas</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of estadisticas">
+                <tr>
+                    <th>{{item.stat.name}}</th>
+                    <td>{{item.base_stat}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="row w-50 mx-auto">
+        <h3>Presente en estos juegos</h3>
+        <ul class="list-group" *ngFor="let item of juegos">
+            <li class="list-group-item list-group-item-light">Pokemon {{item.version.name}}</li>
+        </ul>
+    </div>
 </div>

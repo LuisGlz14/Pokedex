@@ -1,5 +1,6 @@
 import { PokeapiService } from './../services/pokeapi.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-detalles',
@@ -15,7 +16,7 @@ export class DetallesComponent implements OnInit {
   tipos: any;
   estadisticas: any;
 
-  constructor(private pokedex: PokeapiService) { }
+  constructor(private pokedex: PokeapiService, private router: Router) { }
 
   ngOnInit(): void {
     this.pokedex.getPokemon().subscribe((data:any) => {
@@ -26,6 +27,10 @@ export class DetallesComponent implements OnInit {
       this.tipos = data.types;
       this.estadisticas = data.stats;
     })
+  }
+
+  navInicio(){
+    this.router.navigate(['/listado']);
   }
 
 }

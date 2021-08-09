@@ -1,19 +1,36 @@
-<div>
-    <button [disabled]="!prevbtn" (click)="prevBloque()">Anterior</button>
-    <button [disabled]="!nextbtn" (click)="sigBloque()">Siguiente</button>
+<div class="container my-5">
 
-    <table>
-        <tr>
-            <th>Num</th>
-            <th>Nombre</th>
-            <th></th>
-        </tr>
-        <ng-container *ngFor="let item of pokemon; let i = index">
-            <tr>
-                <td>{{i+1+offset}}</td>
-                <td>{{item.name}}</td>
-                <td><button (click)="detalles(item.name)">Detalles</button></td>
-            </tr>
-        </ng-container>
-    </table>
+    <div>
+        <button class="btn btn-dark" [disabled]="!prevbtn" (click)="prevBloque()">Anterior</button>
+        <button class="btn btn-dark" [disabled]="!nextbtn" (click)="sigBloque()">Siguiente</button>
+    </div>
+
+    <div class="row w-50 mx-auto">
+        <div class="col">
+            <table class="table table-primary table-hover mx-auto">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Num</th>
+                        <th scope="col">Nombre</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let item of pokemon; let i = index">
+                    <tr>
+                        <th scope="row">{{i+1+offset}}</th>
+                        <td>{{item.name}}</td>
+                        <td>
+                            <button class="btn btn-secondary" (click)="detalles(item.name)">Detalles</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div>
+        <button class="btn btn-dark" [disabled]="!prevbtn" (click)="prevBloque()">Anterior</button>
+        <button class="btn btn-dark" [disabled]="!nextbtn" (click)="sigBloque()">Siguiente</button>
+    </div>
+
 </div>

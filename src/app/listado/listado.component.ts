@@ -35,6 +35,7 @@ export class ListadoComponent implements OnInit {
       this.prevbtn = true;
       this.pokemon = data.results;
     })
+    window.scrollTo(0,0);
   }
 
   prevBloque(){
@@ -45,5 +46,6 @@ export class ListadoComponent implements OnInit {
       this.nextbtn = true;
       this.pokemon = data.results;
     })
+    window.scrollTo(0,0);
   }
 }
